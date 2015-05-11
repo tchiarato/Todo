@@ -1,0 +1,9 @@
+<%= link_to 'Add new item', new_todo_path %>
+<ul class="todos">
+  <% @todos.each do |item| %>
+    <li class="<%= "completed" if item.completed? %>">
+      <%= item.title %>
+      <%= button_to 'Done', todo_completion_path(item) %>
+    </li>
+  <% end %>
+</ul>
